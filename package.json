@@ -1,6 +1,6 @@
 {
   "name": "@ambertide/generate-realm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate realm files from JSON",
   "author": "Ege Özkan @ambertide",
   "bin": "./bin/run",

@@ -21,3 +21,4 @@ FLAGS
   -o, --out=<value>  [default: out.realm] Path to the output realm
 ```
 
+[Read the documentation!](https://blog.amberti.de/generate-realm/)

@@ -17,4 +17,12 @@ export default {
     },
     primaryKey: '_id',
   },
+  House: {
+    name: 'House',
+    properties: {
+      _id: 'objectId',
+      ferretsInside: 'Ferret[]',
+    },
+    primaryKey: '_id',
+  },
 };

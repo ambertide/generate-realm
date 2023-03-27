@@ -54,7 +54,7 @@ function resolveResolver(realm: Realm, objectNames: string[], propType: string):
   } else if (isPropTypeRealmType(objectNames, propType)) {
     resolver = (hex: string) => realm.objectForPrimaryKey(propType, new Realm.BSON.ObjectID(hex));
   } else if (isPropTypeRealmTypeArray(objectNames, propType)) {
-    resolver = (hexes: string[]) => hexes.map(hex => realm.objectForPrimaryKey(propType, new Realm.BSON.ObjectID(hex)));
+    resolver = (hexes: string[]) => hexes.map(hex => realm.objectForPrimaryKey(propType.replace('[]', ''), new Realm.BSON.ObjectID(hex)));
   }
 
   return resolver;

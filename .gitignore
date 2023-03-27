@@ -16,4 +16,4 @@ node_modules
 oclif.manifest.json
 *.realm
 *.realm.lock
-*.realm.managment/
+*.realm.management/

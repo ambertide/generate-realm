@@ -1,5 +1,5 @@
 {
-  "name": "generate-realm",
+  "name": "@ambertide/generate-realm",
   "version": "0.1.0",
   "description": "Generate realm files from JSON",
   "author": "Ege Özkan @ambertide",
@@ -14,6 +14,9 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",

@@ -1,21 +1,21 @@
 import Realm, {ObjectSchema} from 'realm';
 import {readFile} from 'node:fs/promises';
 
-type Schemas = { [schemaName: string]: ObjectSchema };
+export type Schemas = { [schemaName: string]: ObjectSchema };
 
-type RealmObjects = { [objectSchemaName: string]: Record<string, unknown>[] };
+export type RealmObjects = { [objectSchemaName: string]: Record<string, unknown>[] };
 
-interface SuccessfulStatus {
+export interface SuccessfulStatus {
   success: true;
   createdObjectCount: number;
 }
 
-interface FailedStatus {
+export interface FailedStatus {
   success: false;
   error: string;
 }
 
-type Status = SuccessfulStatus | FailedStatus;
+export type Status = SuccessfulStatus | FailedStatus;
 
 async function readJSONFile<T>(path: string): Promise<T> {
   const file = await readFile(path, {encoding: 'utf-8'});
@@ -96,7 +96,7 @@ function generateRealmObjects(
   return resolvedObjects.map(o => realm.write(() => realm.create(name, o)));
 }
 
-interface GenerateRealm {
+export interface GenerateRealm {
   realm: Realm;
   realmObjects: Realm.Object[]
 }

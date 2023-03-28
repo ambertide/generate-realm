@@ -114,13 +114,18 @@ export async function generateRealm(schemas: Schemas, objects: RealmObjects, out
     schema: Object.values(schemas),
     ...(outputPath ? {path: outputPath} : {inMemory: true}),
   });
-  return {
-    realm,
-    realmObjects: Object.entries(objects).flatMap(
-      ([schemaName, objectsOfSchema]) =>
-        generateRealmObjects(schemaName, realm, Object.keys(objects), schemas[schemaName], objectsOfSchema),
-    ),
-  };
+  try {
+    return {
+      realm,
+      realmObjects: Object.entries(objects).flatMap(
+        ([schemaName, objectsOfSchema]) =>
+          generateRealmObjects(schemaName, realm, Object.keys(objects), schemas[schemaName], objectsOfSchema),
+      ),
+    };
+  } catch (error) {
+    realm.close();
+    throw error;
+  }
 }
 
 /**

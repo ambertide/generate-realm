@@ -4,7 +4,7 @@ export type {
   Schemas,
   Status,
   SuccessfulStatus,
-  FailedStatus
+  FailedStatus,
 } from './utils';
-export { generateRealm, generateRealmFromJSON } from './utils';
-export { run } from '@oclif/core';
+export {generateRealm, generateRealmFromJSON} from './utils';
+export {run} from '@oclif/core';

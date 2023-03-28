@@ -5,5 +5,5 @@ export type {
   Schemas,
   Status,
   SuccessfulStatus,
-  FailedStatus
+  FailedStatus,
 } from './read-realm-file';
